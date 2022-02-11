@@ -1,11 +1,31 @@
 """
 Calculation of prime numbers
 """
-def calcualte_primes(start=0, end=100):
+
+PRIMES_TO_TEN = [2, 3, 5, 7]
+
+
+def calculate_primes(start=0, stop=100):
     """
     Calculates all primes from start to end
     :param start: The number to start from
-    :param end: The number to end
+    :param stop: The number to end
     :return: The primes between start and end
     """
-    print(start + end)
+    primes = []
+    for number in range(start, stop + 1):
+        if number in PRIMES_TO_TEN:
+            primes.append(number)
+            continue
+        elif number is 1:
+            continue
+
+        is_prime = True
+        for divisor in PRIMES_TO_TEN:
+            if number % divisor == 0:
+                is_prime = False
+                break
+        if is_prime:
+            primes.append(number)
+
+    return primes
