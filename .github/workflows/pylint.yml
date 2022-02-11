@@ -15,8 +15,8 @@ jobs:
     - name: PyTest
       uses: cclauss/GitHub-Action-for-pytest@master
       with:
-        args: "pytest --no-header -v --cov=primes"
+        args: "pip install -r requirements.txt ; pytest --no-header -v --cov=primes"
     - name: Behave
       uses: cclauss/GitHub-Action-for-pytest@master
       with:
-        args: "coverage run --source=./prime -m behave"
+        args: "pip install -r requirements.txt ; coverage run --source=./prime -m behave"
