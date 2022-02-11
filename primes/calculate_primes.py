@@ -17,7 +17,7 @@ def calculate_primes(start=0, stop=100):
         if number in PRIMES_TO_TEN:
             primes.append(number)
             continue
-        elif number is 1:
+        elif number == 1:
             continue
 
         is_prime = True
