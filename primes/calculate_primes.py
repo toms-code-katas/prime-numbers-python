@@ -16,7 +16,6 @@ def calculate_primes(start=0, stop=100):
     for number in range(start, stop + 1):
         if number in PRIMES_TO_TEN:
             primes.append(number)
-            continue
         elif number == 1:
             continue
 
