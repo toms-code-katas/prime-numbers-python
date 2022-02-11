@@ -8,7 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Pylint action
+    - name: Pylint
       uses: cclauss/GitHub-Action-for-pylint@master
       with:
         args: "pip install -r requirements.txt ; pylint $(find primes -name *.py)"
+    - name: PyTest
+      uses: cclauss/GitHub-Action-for-pytest@master
+      with:
+        args: "pip install -r requirements.txt ; pytest --no-header -v --cov=primes"
