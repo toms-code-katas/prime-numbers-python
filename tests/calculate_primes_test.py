@@ -1,5 +1,5 @@
 import unittest
-from primes.calculate_primes import calculate_primes
+from primes.calculate_primes import calculate_primes, InvalidRangeException
 
 
 class CalculatePrimesTests(unittest.TestCase):
@@ -11,3 +11,8 @@ class CalculatePrimesTests(unittest.TestCase):
         self.assertListEqual(calculate_primes(start=1, stop=100),
                              [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83,
                               89, 97])
+
+    def test_calculate_primes_for_negative_ranges(self):
+        self.assertRaises(InvalidRangeException, calculate_primes, -100, 0)
+        self.assertRaises(InvalidRangeException, calculate_primes, -100, 100)
+        self.assertRaises(InvalidRangeException, calculate_primes, 10, -50)
