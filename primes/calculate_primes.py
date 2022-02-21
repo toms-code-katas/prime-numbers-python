@@ -6,7 +6,9 @@ PRIMES_TO_TEN = [2, 3, 5, 7]
 
 
 class InvalidRangeException(Exception):
-    pass
+    """
+    Signals an invalid range for calculating primes
+    """
 
 
 def calculate_primes(start=0, stop=100):
@@ -17,8 +19,8 @@ def calculate_primes(start=0, stop=100):
     :return: The primes between start and end
     """
 
-    if start < 0 or stop < 0:
-        raise InvalidRangeException()
+    if start < 0 or stop < 0 or (stop < start):
+        raise InvalidRangeException(f"The range from {start} to {stop} is invalid")
 
     primes = []
     for number in range(start, stop + 1):
