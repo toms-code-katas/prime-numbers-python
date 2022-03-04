@@ -9,7 +9,7 @@ Feature: Calculate prime numbers
       | start | end | calculated-primes |
       | 0     | 10  | 2,3,5,7           |
 
-#    Examples: Invalid inputs
-#      | start | end | calculated-primes |
-#      | 10    | 0   | Exception         |
-#      | -5    | 0   | Exception         |
+    Examples: Invalid inputs
+      | start | end | calculated-primes |
+      | 10    | 0   | Exception         |
+      | -5    | 0   | Exception         |
