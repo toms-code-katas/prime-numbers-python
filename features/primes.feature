@@ -6,8 +6,9 @@ Feature: Calculate prime numbers
     Then the calculated prime numbers should be <calculated-primes>
 
     Examples: Valid inputs
-      | start | end | calculated-primes |
-      | 0     | 10  | 2,3,5,7           |
+      | start | end  | calculated-primes                                                                              |
+      | 0     | 10   | 2,3,5,7                                                                                        |
+      | 0     | 100  | 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 |
 
     Examples: Invalid inputs
       | start | end | calculated-primes |
